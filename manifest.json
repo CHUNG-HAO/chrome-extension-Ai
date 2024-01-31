@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "AI表單回答助手",
+    "version": "1.0",
+    "description": "AI表單助手 協助完成所有表單問題內容",
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "https://api.openai.com/"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }
+  }
